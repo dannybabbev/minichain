@@ -10,39 +10,39 @@ go run main.go
 ```
 
 You append blocks like:
+```go
+// Create a new blockchain
+chain := newChain()
+
+// Create a genesis block with some data and mine it
+genesis := newGenesis(" -> Daniel: 25")
+genesis.mine(difficulty)
+chain.addGenesis(genesis)
+
+// Append new blocks with transaction data an mine them
+b1 := newBlock(genesis, "Daniel -> John: 1.5") // Daniel sends John 1.5 bitcoins
+b1.mine(difficulty)
+chain.addBlock(b1)
+
+b2 := newBlock(b1, "Daniel -> Alice: 2, John -> David 1")
+b2.mine(difficulty)
+chain.addBlock(b2)
+
+b3 := newBlock(b2, "David -> John .5")
+b3.mine(difficulty)
+chain.addBlock(b3)
+
+b4 := newBlock(b3, "Some data")
+b4.mine(difficulty)
+chain.addBlock(b4)
+
+// Print the final result with good visuals
+for _, b := range chain.blocks {
+	b.print()
+}
 ```
-    // Create a new blockchain
-	chain := newChain()
 
-	// Create a genesis block with some data and mine it
-	genesis := newGenesis(" -> Daniel: 25")
-	genesis.mine(difficulty)
-	chain.addGenesis(genesis)
-
-	// Append new blocks with transaction data an mine them
-	b1 := newBlock(genesis, "Daniel -> John: 1.5")
-	b1.mine(difficulty)
-	chain.addBlock(b1)
-
-	b2 := newBlock(b1, "Daniel -> Alice: 2, John -> David 1")
-	b2.mine(difficulty)
-	chain.addBlock(b2)
-
-	b3 := newBlock(b2, "David -> John .5")
-	b3.mine(difficulty)
-	chain.addBlock(b3)
-
-	b4 := newBlock(b3, "Some data")
-	b4.mine(difficulty)
-	chain.addBlock(b4)
-
-	// Print the final result with good visuals
-	for _, b := range chain.blocks {
-		b.print()
-	}
-```
-
-The resulting blockchain will be:
+The resulting output will be:
 ```
 +----------------+------------------------------------------------------------------+
 |      NAME      |                             BLOCK #0                             |
