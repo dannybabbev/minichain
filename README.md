@@ -1,4 +1,4 @@
-# Minichain: A minimalistic blockchain for teaching purposes
+## Minichain: A minimalistic blockchain for teaching purposes
 
 If you want to teach a technical audience about the very basics of a blockchain: showcasing minichain is a great start
 
@@ -88,7 +88,7 @@ The resulting output will be:
 ```
 
 You can adjust the difficulty and logging:
-```
+```go
 // Set the difficulty parameter
 var difficulty = "00000"
 // Enable or disable logging of mining
