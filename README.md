@@ -1,6 +1,6 @@
 ## Minichain: A minimalistic blockchain for teaching purposes
 
-If you want to teach a technical audience about the very basics of a blockchain: showcasing minichain is a great start
+Want to teach a technical audience about the very basics of a blockchain? - Showcasing minichain is a great way to do it!
 
 ## Usage
 
